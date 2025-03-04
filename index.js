@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -20,6 +21,10 @@ app.use(express.json());
 
 // connect to MongoDB
 connectDB();
+
+// routes
+app.use("/api/v1/auth", authRoutes);
+
 
 // listen to port
 const PORT = process.env.PORT || 5000;
