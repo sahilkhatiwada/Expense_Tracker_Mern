@@ -13,7 +13,7 @@ const generateToken = (id) => {
 // register User
 const registerUser = async (req, res) => {
  const { name, email, password, profileImageUrl } = req.body;
- 
+
 //  check if user already exists
 if(!name || !email || !password){
   return res.status(400).json({message: 'Please fill in all fields'});
@@ -35,6 +35,16 @@ try {
     res.status(500).json({message: 'Error in registering user',error: error.message});
 }
 };  
+
+
+
+
+
+
+
+
+
+
 
 // login User
 const loginUser = async (req, res) => {
